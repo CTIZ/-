@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>480</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/2202.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>781</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/2202.png);
+
+color: rgb(255, 255, 255);</string>
+    </property>
+    <attribute name="title">
+     <string>房间控制</string>
+    </attribute>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>20</y>
+       <width>142</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>烟雾：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_smoke">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>142</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>湿度</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_hum">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>50</y>
+       <width>142</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>PM2.5：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_pm">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>142</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>气压：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_air">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>80</y>
+       <width>142</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <widget class="QLabel" name="label_16">
+        <property name="text">
+         <string>光照：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_ill">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>110</y>
+       <width>142</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <item>
+       <widget class="QLabel" name="label_18">
+        <property name="text">
+         <string>燃气：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_gas">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_7">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>110</y>
+       <width>142</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <item>
+       <widget class="QLabel" name="label_20">
+        <property name="text">
+         <string>Co2：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_co2">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>142</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_11">
+      <item>
+       <widget class="QLabel" name="label_22">
+        <property name="text">
+         <string>人体：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_inf">
+        <property name="text">
+         <string>无人</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="btn_lamp">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>270</y>
+       <width>98</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开射灯</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_warning">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>340</y>
+       <width>98</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开报警灯</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_air">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>340</y>
+       <width>98</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开空调</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_rfid">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>270</y>
+       <width>98</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开门禁</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_fan">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>340</y>
+       <width>98</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开风扇</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_tv">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>270</y>
+       <width>98</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开电视</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_curtain">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>340</y>
+       <width>98</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开窗帘</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_dvd">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>270</y>
+       <width>98</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开DVD</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_draw">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>200</y>
+       <width>98</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>温度趋势图</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_tcp">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>100</y>
+       <width>98</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>连接服务器</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_9">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>60</y>
+       <width>201</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_13">
+      <item>
+       <widget class="QLabel" name="label_26">
+        <property name="text">
+         <string>端口号：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_port">
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_10">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>50</y>
+       <width>160</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_15">
+      <item>
+       <widget class="QLabel" name="label_30">
+        <property name="text">
+         <string>波特率：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cmb2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>9600</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>115200</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_11">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>80</y>
+       <width>160</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_16">
+      <item>
+       <widget class="QLabel" name="label_31">
+        <property name="text">
+         <string>校验位：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cmb3">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>NONE</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_12">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>110</y>
+       <width>160</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_17">
+      <item>
+       <widget class="QLabel" name="label_32">
+        <property name="text">
+         <string>数据位：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cmb4">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="currentIndex">
+         <number>3</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>6</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>7</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>8</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="btn_serial">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>150</y>
+       <width>98</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打开串口</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>200</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>安卓状态</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_andoird">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>200</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>单控</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>142</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>温度：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_temp">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>341</x>
+       <y>30</y>
+       <width>201</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_12">
+      <item>
+       <widget class="QLabel" name="label_24">
+        <property name="text">
+         <string>服务器IP：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_ip">
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>20</y>
+       <width>160</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_14">
+      <item>
+       <widget class="QLabel" name="label_29">
+        <property name="text">
+         <string>串口号：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cmb1">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>ttyUSB0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ttySAC0</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/2202.png);
+
+color: rgb(255, 255, 255);</string>
+    </property>
+    <attribute name="title">
+     <string>联动控制</string>
+    </attribute>
+    <widget class="QPushButton" name="btn_clean">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>90</y>
+       <width>98</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>打扫卫生</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_wdl">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>90</y>
+       <width>98</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>请勿打扰</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_mode1">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>240</y>
+       <width>98</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>安防模式</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_mode2">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>240</y>
+       <width>98</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>睡眠模式</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_lx">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>160</y>
+       <width>98</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>联系总台</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="w_lx" native="true">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>230</y>
+       <width>118</width>
+       <height>87</height>
+      </rect>
+     </property>
+     <widget class="QLineEdit" name="led_lx">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_lxfs">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>98</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>发射</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/2202.png);
+
+color: rgb(255, 255, 255);</string>
+    </property>
+    <attribute name="title">
+     <string>模式控制</string>
+    </attribute>
+    <widget class="QComboBox" name="ld1">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>130</y>
+       <width>85</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>光照</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>烟雾</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PM2.5</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="ld2">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>130</y>
+       <width>85</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>&lt;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>&gt;=</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="ld3">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>130</y>
+       <width>113</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>190</y>
+       <width>100</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>联动模式开启</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk1">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>240</y>
+       <width>98</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>报警灯</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>240</y>
+       <width>98</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>风扇</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk3">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>240</y>
+       <width>98</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>窗帘</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk4">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>240</y>
+       <width>98</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>射灯</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/2202.png);
+
+color: rgb(255, 255, 255);</string>
+    </property>
+    <attribute name="title">
+     <string>物品购买</string>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_28">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>30</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>8102</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_11">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>0</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/2203.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lab_wdl">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>10</y>
+     <width>201</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>勿扰模式开启</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
