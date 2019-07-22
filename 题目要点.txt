@@ -1,0 +1,354 @@
+A:智慧模式 (图片尺寸过大，需要修剪)
+B:量多
+C:无特别难点
+D:跑马灯效果(完成),Tips(完成),Tab样式(完成)
+E:无特别难点
+F:柱状图(完成)
+G:图片验证码(完成),滑屏解锁(完成)，饼状图(完成)，滑块显示数据,数据库联动命令(完成)
+H:图片验证码(完成),滑屏解锁(完成)，饼状图(完成)
+I:与安卓实现通讯(强制安卓退出)(完成)
+J:渐变(完成)
+
+
+
+
+
+
+数字和字母的格式验证：
+#include "QRegExp"
+
+//正则表达式
+if(QRegExp("^(?=.*[0-9].*)(?=.*[a-z].*)(?=.*[A-Z].*).*$").indexIn(ui->led_pwd->Text())==-1){
+
+}
+
+跑马灯效果:
+{
+    ui->setupUi(this);
+
+    ui->label->installEventFilter(this);
+//角码
+    m_cuindex=12;
+//文本
+    m_showtext="欢迎使用智能家居系统";
+//字符宽度
+    m_charwidth=fontMetrics().width("a");
+//移动
+    time=new QTimer(this);
+    connect(time,SIGNAL(timeout()),this,SLOT(updateIndex()));
+    time->start(100);
+}
+
+void login::draw(){
+    QPainter q(ui->label);
+    QPen p1;
+    p1.setColor(Qt::red);
+    q.setPen(p1);
+    q.drawText(0,30,m_showtext.mid(m_cuindex));
+    q.drawText(width()-m_cuindex*m_charwidth,30,m_showtext.left(m_cuindex));
+}
+
+void login::updateIndex(){
+    update();
+    m_cuindex++;
+    if(m_cuindex*m_charwidth>=width())
+        m_cuindex=0;
+}
+bool login::eventFilter(QObject *a, QEvent *event){
+    if(a==ui->label&&event->type()==QEvent::Paint)
+        draw();
+    return QWidget::eventFilter(a,event);
+}
+
+柱状图：
+ui(new Ui::Draw)
+{
+    ui->setupUi(this);
+    ui->label->installEventFilter(this);
+    t1=new QTimer(this);
+    connect(t1,SIGNAL(timeout()),this,SLOT(play()));
+    t1->start(1000);
+}
+bool Draw::eventFilter(QObject *a, QEvent *event){
+    if(a==ui->label&&event->type()==QEvent::Paint)
+        mydraw();
+    return QWidget::eventFilter(a,event);
+}
+
+void Draw::play(){
+    v<<100;
+    if(v.count()>13)
+        v.remove(0);
+    update();
+}
+void Draw::mydraw(){
+    QPainter q(ui->label);
+    float px=50;float py=400;
+    float K=1200/py;
+//间隔
+    float jg=15;
+//矩形宽度
+    float Rwidth=25;
+
+    q.drawLine(px,20,px,py+20);
+    q.drawLine(0,py+20,800,py+20);
+    for(int i=0;i<=6;i++){
+        q.drawText(0,py+20-i*66,QString::number(i*200));
+        q.drawLine(px,py+20-i*66,px+5,py+20-i*66);
+    }
+    for(int i=1;i<=v.count();i++){
+        q.drawRect(px+jg*i+Rwidth*(i-1)+jg*(i-1),py+20,Rwidth,-v[i-1]/K);
+    }
+}
+
+图片验证码：
+ui(new Ui::login)
+{
+    ui->setupUi(this);
+//四个随机数
+    num1=num2=num3=num4=0;
+//定时器30秒换一次验证码
+    t1=new QTimer(this);
+    connect(t1,SIGNAL(timeout()),this,SLOT(numYZ()));
+    t1->start(30000);
+//随机数赋值
+void login::numYZ(){
+    num1=rand()%9;
+    num2=rand()%9;
+    num3=rand()%9;
+    num4=rand()%9;
+    if(num1>=6&&num1<=8){
+        ui->lab_num1->setStyleSheet("border-image: url(:/"+QString::number(num1)+".png);");
+    }else{
+        ui->lab_num1->setStyleSheet("border-image: url(:/"+QString::number(num1)+".jpg);");
+    }
+    if(num2>=6&&num2<=8){
+        ui->lab_num2->setStyleSheet("border-image: url(:/"+QString::number(num2)+".png);");
+    }else{
+        ui->lab_num2->setStyleSheet("border-image: url(:/"+QString::number(num2)+".jpg);");
+    }
+    if(num3>=6&&num3<=8){
+        ui->lab_num3->setStyleSheet("border-image: url(:/"+QString::number(num3)+".png);");
+    }else{
+        ui->lab_num3->setStyleSheet("border-image: url(:/"+QString::number(num3)+".jpg);");
+    }
+    if(num4>=6&&num4<=8){
+        ui->lab_num4->setStyleSheet("border-image: url(:/"+QString::number(num4)+".png);");
+    }else{
+        ui->lab_num4->setStyleSheet("border-image: url(:/"+QString::number(num4)+".jpg);");
+    }
+}
+
+安卓强制退出：
+myTcp->upload(Fan,"","3");
+QTimer::signlot(500,this,SLOT(andorid_exit()));
+
+andorid_exit(){
+    myTcp->upload(Fan,"","0");
+}
+
+饼状图:
+//.h
+public:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+
+    QVector<float> temp_num;
+    QVector<float> ill_num;
+    QList<QBrush> m_colorlist;
+    int draw_c;
+
+private slots:
+    bool eventFilter(QObject *a, QEvent *event);
+    void play();
+    void mydraw();
+
+//.cpp
+{
+    ui->setupUi(this);
+
+    temp_num<<1<<1<<1;
+    ill_num<<1<<1<<1;
+    ui->label->installEventFilter(this);
+    QTimer *time=new QTimer(this);
+    connect(time,SIGNAL(timeout()),this,SLOT(play()));
+    time->start();
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+bool MainWindow::eventFilter(QObject *a, QEvent *event){
+    if(a==ui->label&&event->type()==QEvent::Paint)
+        mydraw();
+    return QWidget::eventFilter(a,event);
+}
+
+void MainWindow::play(){
+//温度
+    if(0<=temp_value&&temp_value<=19)
+	temp_num[0]++;
+    else if(20<=temp_value&&temp_value<=29)
+	temp_num[1]++;
+    else if(30<=temp_value&&temp_value<=39)
+	temp_num[2]++;
+//光照
+    if(0<=ill_value&&ill_value<=300)
+	ill_num[0]++;
+    else if(301<=ill_value&&ill_value<=699)
+	ill_num[1]++;
+    else if(700<=ill_value&&ill_value<=1500)
+	ill_num[2]++;
+
+    update();
+}
+
+void MainWindow::mydraw(){
+    QPainter q(ui->label);
+    m_colorlist<<QBrush(Qt::red);
+    m_colorlist<<QBrush(Qt::blue);
+    m_colorlist<<QBrush(Qt::yellow);
+    //半径
+    int radius=100;
+    //矩形
+    QRect rect(20,40,radius,radius);
+
+    //总值
+    float temp_sum=temp_num[0]+temp_num[1]+temp_num[2];
+    float ill_sum=ill_num[0]+ill_num[1]+ill_num[2];
+    //扇型角度
+    int angle;
+    //画扇型
+//温度
+    if(draw_c==1){
+        int pos=0;
+        for(int i=0;i<temp_num.count();++i){
+            angle=temp_num[i]/temp_sum*16*360;
+            QBrush color=m_colorlist.at(i);
+            q.setBrush(color);
+            q.drawPie(rect,pos,angle);
+            pos+=angle;
+        }
+        //画lable标注
+        pos=0;
+        for(int i=0;i<temp_num.count();++i){
+            angle=temp_num[i]/temp_sum*16*360;
+            double labAngle=(pos+angle/2)/16;
+            double tx = rect.width() / 2 * qCos(labAngle / 360 * 2 * 3.14);
+            double ty = -rect.width() / 2 * qSin(labAngle / 360 * 2 * 3.14);
+            q.drawText(QPoint(tx/2,ty/2)+rect.center(),QString::number((int)(temp_num[i]/temp_sum*100+0.5f))+"%");
+            pos+=angle;
+        }
+    }else if(draw_c==2){//光照
+        int pos=0;
+        for(int i=0;i<ill_num.count();++i){
+            angle=ill_num[i]/ill_sum*16*360;
+            QBrush color=m_colorlist.at(i);
+            q.setBrush(color);
+            q.drawPie(rect,pos,angle);
+            pos+=angle;
+        }
+        //画lable标注
+        pos=0;
+        for(int i=0;i<ill_num.count();++i){
+            angle=ill_num[i]/ill_sum*16*360;
+            double labAngle=(pos+angle/2)/16;
+            double tx = rect.width() / 2 * qCos(labAngle / 360 * 2 * 3.14);
+            double ty = -rect.width() / 2 * qSin(labAngle / 360 * 2 * 3.14);
+            q.drawText(QPoint(tx/2,ty/2)+rect.center(),QString::number((int)(ill_num[i]/ill_sum*100+0.5f))+"%");
+            pos+=angle;
+        }
+    }
+    //清除
+    m_colorlist.clear();
+}
+
+滑屏解锁:
+
+#include "QMouseEvent"
+
+void login::mousePressEvent(QMouseEvent *event){
+    if(event->button()==Qt::LeftButton){
+        px=cursor().pos().x();
+        py=cursor().pos().y();
+    }
+}
+void login::mouseReleaseEvent(QMouseEvent *event){
+    if(event->button()==Qt::LeftButton){
+        int rpx=cursor().pos().x();
+        int rpy=cursor().pos().y();
+        if(!(280<rpx&&rpx<510)){
+            if(px-30<rpx&&rpx<px+30){
+                if(py-30>rpy){
+                    QSqlQuery q;
+                    q.exec("select * from user where name='"+ui->led_name->text()+"' and pwd='"+ui->led_pwd->text()+"'");
+                    if(q.next()){
+                        ip=ui->led_ip->text();
+                        port=ui->led_port->text();
+                        welcome a;
+                        a.setWindowFlags(Qt::FramelessWindowHint);
+                        this->close();
+                        a.exec();
+                    }else{
+                        QMessageBox::critical(this,"登录错误","用户名或密码错误","确认","取消");
+                    }
+                }
+            }
+        }
+    }
+}
+
+反走样:
+q.setRenderHint(QPainter::Antialiasing, true);
+
+D卷Tab样式表：
+/*Tab最小宽高*/
+QTabBar::tab
+{
+min-width:118px;
+min-height:48px;
+}
+/*选中状态*/
+QTabBar::tab:selected
+{
+color: block;
+background-image: url(:/4207.png);
+}
+/*未选中状态*/
+QTabBar::tab:!selected
+{
+color: white;
+background:transparent;
+}
+/*主背景*/
+QTabWidget:pane 
+{
+border-top:0px solid #e8f3f9;
+background:  transparent; 
+}
+
+D卷Tips:
+QToolTip::showText(cursor.pos(),"文本");
+
+画渐变:
+p2.setWidth(0);
+p2.setColor(QColor(0,0,0,0));
+
+QLinearGradient linear(QPoint(width()/2,0),QPoint(width()/2,py));
+linear.setColorAt(0, QColor(0,255,255));
+linear.setColorAt(1, Qt::black);
+// 设置显示模式,线性
+linear.setSpread(QGradient::PadSpread);
+//设置画刷
+q.setBrush(linear);
+
+QPoint pnts[4]={
+        QPoint(px+(i-1)*30,py-v[i-2]/K),
+        QPoint(px+(i-1)*30,py),
+        QPoint(px+i*30,py),
+        QPoint(px+i*30,py-v[i-1]/K)
+    };
+    q.setPen(p2);
+    q.drawPolygon(pnts,4);
