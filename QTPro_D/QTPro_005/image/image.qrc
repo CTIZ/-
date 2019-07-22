@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/">
+        <file>4201.png</file>
+        <file>4202.png</file>
+        <file>4203.png</file>
+        <file>4204.png</file>
+        <file>4205.png</file>
+        <file>4206.png</file>
+        <file>4207.png</file>
+        <file>4208.png</file>
+        <file>4209.png</file>
+        <file>4210.png</file>
+        <file>4211.png</file>
+        <file>4212.png</file>
+        <file>4213.png</file>
+        <file>4214.png</file>
+        <file>4215.png</file>
+        <file>4216.png</file>
+        <file>4217.png</file>
+        <file>4218.png</file>
+        <file>4219.png</file>
+        <file>4220.png</file>
+        <file>4221.png</file>
+        <file>4222.png</file>
+        <file>4223.png</file>
+        <file>4224.png</file>
+        <file>4225.png</file>
+        <file>4226.png</file>
+        <file>4227.png</file>
+        <file>4228.png</file>
+        <file>4229.png</file>
+        <file>4230.png</file>
+        <file>4231.png</file>
+        <file>4232.png</file>
+        <file>4233.png</file>
+        <file>4234.png</file>
+        <file>image.qrc</file>
+    </qresource>
+</RCC>
