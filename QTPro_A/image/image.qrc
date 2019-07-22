@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image.qrc</file>
+        <file>1219.png</file>
+        <file>1218.png</file>
+        <file>1217.png</file>
+        <file>1216.png</file>
+        <file>1215.png</file>
+        <file>1214.png</file>
+        <file>1213.png</file>
+        <file>1212.png</file>
+        <file>1211.png</file>
+        <file>1210.png</file>
+        <file>1209.png</file>
+        <file>1208.png</file>
+        <file>1207.png</file>
+        <file>1206.png</file>
+        <file>1205.png</file>
+        <file>1204.png</file>
+        <file>1203.png</file>
+        <file>1202.jpg</file>
+        <file>1201.jpg</file>
+        <file>1303.jpg</file>
+    </qresource>
+</RCC>
